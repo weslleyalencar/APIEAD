@@ -1,6 +1,6 @@
 module.exports = {
     helloWorld(request, response){    
-        response.json({mensagem:"Hello World 2!"})
+        response.json({mensagem:"Status de serviço: online"})
     },
 
     parametro (request, response){
