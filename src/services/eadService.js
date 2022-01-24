@@ -28,7 +28,7 @@ module.exports = {
             qtdPaginas = linhas
         }        
         
-        for(var i = 1; i <= qtdPaginas; i++){    
+        for(var i = 0; i <= qtdPaginas; i++){    
             if(i>=1){
                 offset = i * 1000
             }
@@ -36,10 +36,11 @@ module.exports = {
             
             console.log("Linha " + i + "=> " + url)
                         
-            await axios.get(url).then(res => dados = res.data)                
+            await axios.get(url).then(res => dados = res.data)    
+            
+            console.log(dados)
                       
-            if(Array.isArray(dados)){          
-                
+            if(Array.isArray(dados)){                  
                 lista =  [...lista, ...dados]
             }       
     
