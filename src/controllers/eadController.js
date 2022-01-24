@@ -4,12 +4,10 @@ module.exports = {
     async list(request, response){
         var {
             apiname, 
-            paginate, 
-            limit, 
-            offset
+            qtdpaginas
         } = request.query
         
-        var listCompleted = await eadService.buildList(apiname, paginate, limit, offset)    
+        var listCompleted = await eadService.buildList(apiname, qtdpaginas)    
         response.json(listCompleted)
     }
 }
