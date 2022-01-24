@@ -8,22 +8,25 @@ module.exports = {
         console.log("QTD PAGINAS: " + qtdPaginas)
         console.log("API NAME: " + nomeApi)
 
-        var lista = []
-        var url = ''
-        var linhas = 0
-        var limit = 1000
-        var offset = 0
+        let lista = []
+        let url = ''
+        let linhas = 0
+        let limit = 1000
+        let offset = 0
+        let dados
     
         url = `https://cursoexcelonline.com.br/api/1/${nomeApi}?token=${process.env.eadtoken}&paginate=1&limit=1&offset=1`
         console.log(url)
 
         await axios.get(url).then(res => linhas = res.data)          
     
-        linhas = parseInt(Number(linhas.rowsTotal)/1000)+1
+        linhas = parseInt(Number(linhas.rowsTotal)/1000)+1   
 
-        console.log("Total de linhas: " + linhas)
 
-        var dados
+        if(qtdPaginas == 0 || qtdPaginas == undefined){
+            console.log("Total de linhas: " + linhas)
+            qtdPaginas = linhas
+        }        
         
         for(var i = 1; i <= qtdPaginas; i++){    
             if(i>=1){
