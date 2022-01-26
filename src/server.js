@@ -4,4 +4,4 @@ const qtdpaginas = process.env.qtdpaginas || 0
 
 app.listen(port, ()=>{
     console.log(`Servidor rodando na porta ${port}...`)
-}).timeout(120000)
+}).setTimeout(120000)

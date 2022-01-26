@@ -38,7 +38,7 @@ module.exports = {
                         
             await axios.get(url).then(res => dados = res.data)    
             
-            console.log(dados)
+            //console.log(dados)
                       
             if(Array.isArray(dados)){                  
                 lista =  [...lista, ...dados]
