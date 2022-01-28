@@ -5,10 +5,11 @@ module.exports = {
         var {
             //parametros
             apiname, 
-            qtdpaginas
+            qtdpaginas,
         } = request.query
         
-        var listCompleted = await eadService.buildList(apiname, qtdpaginas)    
+
+        var listCompleted = await eadService.buildList(apiname, qtdpaginas, request)    
         response.json(listCompleted)
     }
 }
